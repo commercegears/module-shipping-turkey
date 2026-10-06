@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+<SetOrder xmlns="http://tempuri.org/">
+<orderInfo>
+<Order>
+<UserName>neodyum</UserName><Password>****</Password>
+<TradingWaybillNumber>SWT1791308033</TradingWaybillNumber>
+<InvoiceNumber>SWT1791308033</InvoiceNumber>
+<IntegrationCode>SWT1791308033</IntegrationCode>
+<ReceiverName>Test Alici</ReceiverName>
+<ReceiverAddress>Test Mahallesi Deneme Sokak No 1</ReceiverAddress>
+<ReceiverPhone1>02120000000</ReceiverPhone1>
+<ReceiverCityName>ISTANBUL</ReceiverCityName>
+<ReceiverTownName>KADIKOY</ReceiverTownName>
+<VolumetricWeight>2</VolumetricWeight>
+<Weight>1</Weight>
+<PieceCount>1</PieceCount>
+<IsCod>0</IsCod>
+<PayorTypeCode>1</PayorTypeCode>
+<IsWorldWide>0</IsWorldWide>
+<PieceDetails><PieceDetail><VolumetricWeight>2</VolumetricWeight><Weight>1</Weight><BarcodeNumber>SWT17913080331</BarcodeNumber><ProductNumber>SKU1</ProductNumber><Description>Test</Description></PieceDetail></PieceDetails>
+</Order>
+</orderInfo>
+<userName>neodyum</userName><password>****</password>
+</SetOrder>
+</soap:Body>
+</soap:Envelope>
