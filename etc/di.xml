@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Softaware\ShippingCore\Model\Carrier\AdapterPool">
+        <arguments>
+            <argument name="adapters" xsi:type="array">
+                <item name="aras" xsi:type="object">Softaware\ShippingTurkey\Model\Adapter\Aras</item>
+                <item name="yurtici" xsi:type="object">Softaware\ShippingTurkey\Model\Adapter\Yurtici</item>
+                <item name="geliver" xsi:type="object">Softaware\ShippingTurkey\Model\Adapter\Geliver</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
