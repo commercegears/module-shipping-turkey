@@ -15,6 +15,7 @@ use Softaware\ShippingCore\Model\Carrier\Data\ShipmentRequest;
 use Softaware\ShippingCore\Model\Carrier\Data\ShipmentResult;
 use Softaware\ShippingCore\Model\Carrier\Data\TrackingEvent;
 use Softaware\ShippingCore\Model\Carrier\Data\TrackingResult;
+use Softaware\ShippingCore\Api\CredentialsHelpInterface;
 
 /**
  * Aras Kargo (Türkiye): order web service (ASMX SOAP, namespace http://tempuri.org/) for SetOrder, GetArasBarcode
@@ -23,7 +24,7 @@ use Softaware\ShippingCore\Model\Carrier\Data\TrackingResult;
  *
  * Labels: GetArasBarcode returns one JPEG per piece (merged into a PDF by the module) plus Zebra EPL.
  */
-class Aras extends AbstractAdapter
+class Aras extends AbstractAdapter implements CredentialsHelpInterface
 {
     public const CODE = 'aras';
     private const TEST_URL = 'https://customerservicestest.araskargo.com.tr/arascargoservice/arascargoservice.asmx';
@@ -56,22 +57,34 @@ class Aras extends AbstractAdapter
     public function getCredentialFields(): array
     {
         return [
-            ['code' => 'username', 'label' => (string)__('Web service user name'), 'type' => 'text', 'required' => true,
-                'notice' => (string)__('SetOrder user from your Aras branch. The Aras test system accepts the integration test user.')],
-            ['code' => 'password', 'label' => (string)__('Web service password'), 'type' => 'password', 'required' => true],
-            ['code' => 'customer_code', 'label' => (string)__('Customer code (for tracking)'), 'type' => 'text'],
-            ['code' => 'query_username', 'label' => (string)__('XML service user (for tracking)'), 'type' => 'text',
+            ['code' => 'username', 'label' => (string)__('Web Service User Name'), 'type' => 'text', 'required' => true,
+                'notice' => (string)__('SetOrder user from your Aras branch.'),
+                'sandbox' => (string)__('the integration test user from Aras')],
+            ['code' => 'password', 'label' => (string)__('Web Service Password'), 'type' => 'password', 'required' => true],
+            ['code' => 'customer_code', 'label' => (string)__('Customer Code (Tracking)'), 'type' => 'text',
+                'notice' => (string)__('Your Aras customer number; needed for tracking.')],
+            ['code' => 'query_username', 'label' => (string)__('XML Service User (Tracking)'), 'type' => 'text',
                 'notice' => (string)__('Created in esasweb.araskargo.com.tr > Entegrasyon > XML Servisleri.')],
-            ['code' => 'query_password', 'label' => (string)__('XML service password'), 'type' => 'password'],
+            ['code' => 'query_password', 'label' => (string)__('XML Service Password'), 'type' => 'password'],
         ];
+    }
+
+    public function getCredentialsHelp(): string
+    {
+        return (string)__('Web service user, password and customer code come from your Aras Kargo branch; tracking needs an XML service user created in esasweb.araskargo.com.tr > Entegrasyon > XML Servisleri.');
+    }
+
+    public function getSandboxHelp(): string
+    {
+        return (string)__('On: the Aras test web service with the integration test user from Aras; test shipments are not collected. Off: your live web service user.');
     }
 
     public function getOptionFields(): array
     {
         return [
-            ['code' => 'payor', 'label' => (string)__('Shipping paid by'), 'type' => 'select',
+            ['code' => 'payor', 'label' => (string)__('Shipping Paid By'), 'type' => 'select',
                 'options' => ['1' => (string)__('Sender (contract)'), '2' => (string)__('Recipient')], 'default' => '1'],
-            ['code' => 'cod_collection', 'label' => (string)__('Cash on delivery collected as'), 'type' => 'select',
+            ['code' => 'cod_collection', 'label' => (string)__('Cash on Delivery Collected As'), 'type' => 'select',
                 'options' => ['0' => (string)__('Cash'), '1' => (string)__('Card')], 'default' => '0'],
         ];
     }

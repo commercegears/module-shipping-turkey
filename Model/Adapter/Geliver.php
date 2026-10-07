@@ -16,6 +16,7 @@ use Softaware\ShippingCore\Model\Carrier\Data\ShipmentResult;
 use Softaware\ShippingCore\Model\Carrier\Data\TrackingEvent;
 use Softaware\ShippingCore\Model\Carrier\Data\TrackingResult;
 use Softaware\ShippingTurkey\Model\TurkishProvinces;
+use Softaware\ShippingCore\Api\CredentialsHelpInterface;
 
 /**
  * Geliver (Türkiye aggregator: Aras, Yurtiçi, PTT, Sürat, HepsiJet, Kolay Gelsin) REST API v1.
@@ -24,7 +25,7 @@ use Softaware\ShippingTurkey\Model\TurkishProvinces;
  * each GET advances their tracking status one step. Flow: create shipment -> accept cheapest (or chosen provider)
  * offer -> label PDF from labelURL.
  */
-class Geliver extends AbstractAdapter
+class Geliver extends AbstractAdapter implements CredentialsHelpInterface
 {
     public const CODE = 'geliver';
     private const BASE = 'https://api.geliver.io/api/v1';
@@ -47,19 +48,29 @@ class Geliver extends AbstractAdapter
     public function getCredentialFields(): array
     {
         return [
-            ['code' => 'api_token', 'label' => (string)__('API token'), 'type' => 'password', 'required' => true,
+            ['code' => 'api_token', 'label' => (string)__('API Token'), 'type' => 'password', 'required' => true,
                 'notice' => (string)__('app.geliver.io > API tokens.')],
         ];
+    }
+
+    public function getCredentialsHelp(): string
+    {
+        return (string)__('app.geliver.io > API tokens (the account needs your tax plate or e-Devlet residence document and the signed agreement). The sender address ID is under Carrier Settings.');
+    }
+
+    public function getSandboxHelp(): string
+    {
+        return (string)__('On: Geliver test shipments on the same account (not charged; their tracking moves on one step per check). Off: real shipments.');
     }
 
     public function getOptionFields(): array
     {
         return [
-            ['code' => 'sender_address_id', 'label' => (string)__('Sender address ID'), 'type' => 'text', 'required' => true,
+            ['code' => 'sender_address_id', 'label' => (string)__('Sender Address ID'), 'type' => 'text', 'required' => true,
                 'notice' => (string)__('ID of the sender address created in Geliver (Addresses).')],
-            ['code' => 'provider_service_code', 'label' => (string)__('Carrier service code'), 'type' => 'text',
+            ['code' => 'provider_service_code', 'label' => (string)__('Carrier Service Code'), 'type' => 'text',
                 'notice' => (string)__('E.g. YURTICI_STANDART, ARAS_STANDART, SURAT_STANDART. Empty = cheapest offer.')],
-            ['code' => 'source_identifier', 'label' => (string)__('Shop address (source identifier)'), 'type' => 'text',
+            ['code' => 'source_identifier', 'label' => (string)__('Shop Address (Source Identifier)'), 'type' => 'text',
                 'notice' => (string)__('Your shop URL, e.g. https://www.example.com.tr')],
         ];
     }

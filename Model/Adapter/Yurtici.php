@@ -17,6 +17,7 @@ use Softaware\ShippingCore\Model\Carrier\Data\ShipmentResult;
 use Softaware\ShippingCore\Model\Carrier\Data\TrackingEvent;
 use Softaware\ShippingCore\Model\Carrier\Data\TrackingResult;
 use Softaware\ShippingCore\Model\Shipping\OwnLabelRenderer;
+use Softaware\ShippingCore\Api\CredentialsHelpInterface;
 
 /**
  * Yurtiçi Kargo ShippingOrderDispatcherServices (SOAP): createShipment, queryShipment, cancelShipment.
@@ -25,7 +26,7 @@ use Softaware\ShippingCore\Model\Shipping\OwnLabelRenderer;
  * its own label with the cargo key as a Code 128 barcode, which the branch scans. Yurtiçi web services only answer
  * from Turkish IP addresses (or whitelisted ones).
  */
-class Yurtici extends AbstractAdapter
+class Yurtici extends AbstractAdapter implements CredentialsHelpInterface
 {
     public const CODE = 'yurtici';
     private const NS = 'http://yurticikargo.com.tr/ShippingOrderDispatcherServices';
@@ -55,16 +56,27 @@ class Yurtici extends AbstractAdapter
     public function getCredentialFields(): array
     {
         return [
-            ['code' => 'username', 'label' => (string)__('Web service user (wsUserName)'), 'type' => 'text', 'required' => true,
-                'notice' => (string)__('Test system: YKTEST')],
-            ['code' => 'password', 'label' => (string)__('Web service password'), 'type' => 'password', 'required' => true],
+            ['code' => 'username', 'label' => (string)__('Web Service User (wsUserName)'), 'type' => 'text', 'required' => true,
+                'notice' => (string)__('From your Yurtiçi Kargo contract.'),
+                'sandbox' => 'YKTEST'],
+            ['code' => 'password', 'label' => (string)__('Web Service Password'), 'type' => 'password', 'required' => true],
         ];
+    }
+
+    public function getCredentialsHelp(): string
+    {
+        return (string)__('Web service user (wsUserName) and password from your Yurtiçi Kargo contract. Yurtiçi only answers requests from Turkish (or whitelisted) IP addresses.');
+    }
+
+    public function getSandboxHelp(): string
+    {
+        return (string)__('On: the Yurtiçi test web service with the test user; shipments are not collected. Off: your live web service user.');
     }
 
     public function getOptionFields(): array
     {
         return [
-            ['code' => 'cod_type', 'label' => (string)__('Cash on delivery collected as'), 'type' => 'select', 'default' => '0',
+            ['code' => 'cod_type', 'label' => (string)__('Cash on Delivery Collected As'), 'type' => 'select', 'default' => '0',
                 'options' => ['0' => (string)__('Cash'), '1' => (string)__('Card')]],
         ];
     }

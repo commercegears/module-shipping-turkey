@@ -6,7 +6,7 @@
     "require": {
         "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
         "magento/framework": "~103.0.7",
-        "softaware/module-shipping-core": "^1.0"
+        "softaware/module-shipping-core": "^1.1"
     },
     "autoload": {
         "files": [
