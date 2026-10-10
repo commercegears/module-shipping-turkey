@@ -42,7 +42,7 @@ class Geliver extends AbstractAdapter implements CredentialsHelpInterface
 
     public function getCapabilities(): array
     {
-        return [self::CAP_SHIPMENT, self::CAP_CANCEL, self::CAP_TRACKING, self::CAP_RETURNS];
+        return [self::CAP_SHIPMENT, self::CAP_CANCEL, self::CAP_TRACKING, self::CAP_RETURNS, self::CAP_DESI];
     }
 
     public function getCredentialFields(): array

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 - 2026-10-10
+
+### Changed
+- Aras, Yurtiçi and Geliver declare the desi capability (`CAP_DESI`), so the label form shows the desi of the parcels
+  for them only (Shipping Core 1.1.2 no longer shows it for DPD, DHL or Royal Mail). Requires Shipping Core 1.1.2.
+
 ## 1.0.1 - 2026-10-07
 
 ### Changed

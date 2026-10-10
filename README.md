@@ -28,7 +28,7 @@ composer require softaware/module-shipping-turkey
 bin/magento setup:upgrade
 ```
 
-Requires `softaware/module-shipping-core` ^1.0 (installed automatically). Then add a connection in
+Requires `softaware/module-shipping-core` ^1.1.2 (installed automatically). Then add a connection in
 Softaware > Shipping Connect > Carrier Connections > Add Carrier Connection > Aras Kargo, Yurtiçi Kargo or Geliver, enter the credentials, use
 "Test Connection", add checkout methods and save. Labels, tracking and returns are then available from the order
 view and the order grid (see the Shipping Core README).

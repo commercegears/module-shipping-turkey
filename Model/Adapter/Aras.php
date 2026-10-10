@@ -51,7 +51,7 @@ class Aras extends AbstractAdapter implements CredentialsHelpInterface
     {
         // Multi-piece orders are accepted by SetOrder, but GetArasBarcode returned no label for them on the test
         // system, so one parcel per label for now.
-        return [self::CAP_SHIPMENT, self::CAP_CANCEL, self::CAP_TRACKING, self::CAP_COD];
+        return [self::CAP_SHIPMENT, self::CAP_CANCEL, self::CAP_TRACKING, self::CAP_COD, self::CAP_DESI];
     }
 
     public function getCredentialFields(): array
