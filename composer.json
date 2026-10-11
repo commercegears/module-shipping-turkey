@@ -1,19 +1,22 @@
 {
-    "name": "softaware/module-shipping-turkey",
-    "description": "Turkish carriers for Softaware Shipping Connect: Aras Kargo, Yurtiçi Kargo and the Geliver aggregator (Aras, Yurtiçi, PTT, Sürat, HepsiJet, Kolay Gelsin) with desi, COD and tracking.",
+    "name": "commercegears/module-shipping-turkey",
+    "description": "Turkish carriers for CommerceGears Shipping Connect: Aras Kargo, Yurtiçi Kargo and the Geliver aggregator (Aras, Yurtiçi, PTT, Sürat, HepsiJet, Kolay Gelsin) with desi, COD and tracking.",
     "type": "magento2-module",
     "license": "proprietary",
     "require": {
         "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
         "magento/framework": "~103.0.7",
-        "softaware/module-shipping-core": "^1.1.2"
+        "commercegears/module-shipping-core": "^2.0"
     },
     "autoload": {
         "files": [
             "registration.php"
         ],
         "psr-4": {
-            "Softaware\\ShippingTurkey\\": ""
+            "CommerceGears\\ShippingTurkey\\": ""
         }
+    },
+    "replace": {
+        "softaware/module-shipping-turkey": "*"
     }
 }

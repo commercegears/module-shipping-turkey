@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  *
  * Mock scenario for this carrier package: responses written from the carrier's official API documentation (and
  * recorded test-system responses in ../Fixtures), with the assertions run by the Shipping Connect test harness
@@ -9,11 +9,11 @@
  */
 declare(strict_types=1);
 
-use Softaware\ShippingCore\Model\Carrier\AdapterPool;
-use Softaware\ShippingCore\Model\Carrier\Data\PickupPoint;
-use Softaware\ShippingCore\Model\Carrier\Data\PickupPointQuery;
-use Softaware\ShippingCore\Model\Carrier\Data\RateRequest;
-use Softaware\ShippingTurkey\Model\TurkishProvinces;
+use CommerceGears\ShippingCore\Model\Carrier\AdapterPool;
+use CommerceGears\ShippingCore\Model\Carrier\Data\PickupPoint;
+use CommerceGears\ShippingCore\Model\Carrier\Data\PickupPointQuery;
+use CommerceGears\ShippingCore\Model\Carrier\Data\RateRequest;
+use CommerceGears\ShippingTurkey\Model\TurkishProvinces;
 
 function sc_test_turkey(ScMockTransport $mock, AdapterPool $pool): void
 {

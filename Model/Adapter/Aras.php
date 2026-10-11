@@ -1,21 +1,21 @@
 <?php
 /**
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ShippingTurkey\Model\Adapter;
+namespace CommerceGears\ShippingTurkey\Model\Adapter;
 
-use Softaware\ShippingCore\Api\Data\ConnectionInterface;
-use Softaware\ShippingCore\Exception\CarrierException;
-use Softaware\ShippingCore\Model\Carrier\AbstractAdapter;
-use Softaware\ShippingCore\Model\Carrier\Data\Address;
-use Softaware\ShippingCore\Model\Carrier\Data\Label;
-use Softaware\ShippingCore\Model\Carrier\Data\ShipmentRequest;
-use Softaware\ShippingCore\Model\Carrier\Data\ShipmentResult;
-use Softaware\ShippingCore\Model\Carrier\Data\TrackingEvent;
-use Softaware\ShippingCore\Model\Carrier\Data\TrackingResult;
-use Softaware\ShippingCore\Api\CredentialsHelpInterface;
+use CommerceGears\ShippingCore\Api\Data\ConnectionInterface;
+use CommerceGears\ShippingCore\Exception\CarrierException;
+use CommerceGears\ShippingCore\Model\Carrier\AbstractAdapter;
+use CommerceGears\ShippingCore\Model\Carrier\Data\Address;
+use CommerceGears\ShippingCore\Model\Carrier\Data\Label;
+use CommerceGears\ShippingCore\Model\Carrier\Data\ShipmentRequest;
+use CommerceGears\ShippingCore\Model\Carrier\Data\ShipmentResult;
+use CommerceGears\ShippingCore\Model\Carrier\Data\TrackingEvent;
+use CommerceGears\ShippingCore\Model\Carrier\Data\TrackingResult;
+use CommerceGears\ShippingCore\Api\CredentialsHelpInterface;
 
 /**
  * Aras Kargo (Türkiye): order web service (ASMX SOAP, namespace http://tempuri.org/) for SetOrder, GetArasBarcode

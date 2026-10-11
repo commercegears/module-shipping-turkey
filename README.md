@@ -1,7 +1,7 @@
-# Softaware Shipping Connect: Turkish carriers: Aras Kargo, Yurtiçi Kargo, Geliver
+# CommerceGears Shipping Connect: Turkish carriers: Aras Kargo, Yurtiçi Kargo, Geliver
 
-Carrier package for Softaware Shipping Connect (`softaware/module-shipping-core`). Package
-`softaware/module-shipping-turkey`, module `Softaware_ShippingTurkey`.
+Carrier package for CommerceGears Shipping Connect (`commercegears/module-shipping-core`). Package
+`commercegears/module-shipping-turkey`, module `CommerceGears_ShippingTurkey`.
 
 Status: **Aras Kargo: tested** against the Aras test web service (order, label, COD, cancel); Aras tracking is beta. **Yurtiçi Kargo and Geliver: beta** (written from the documentation/SDK, tested with recorded responses; the Yurtiçi test service only answers from Turkish IP addresses).
 
@@ -24,12 +24,12 @@ carrier service code).
 ## Installation
 
 ```
-composer require softaware/module-shipping-turkey
+composer require commercegears/module-shipping-turkey
 bin/magento setup:upgrade
 ```
 
-Requires `softaware/module-shipping-core` ^1.1.2 (installed automatically). Then add a connection in
-Softaware > Shipping Connect > Carrier Connections > Add Carrier Connection > Aras Kargo, Yurtiçi Kargo or Geliver, enter the credentials, use
+Requires `commercegears/module-shipping-core` ^1.1.2 (installed automatically). Then add a connection in
+CommerceGears > Shipping Connect > Carrier Connections > Add Carrier Connection > Aras Kargo, Yurtiçi Kargo or Geliver, enter the credentials, use
 "Test Connection", add checkout methods and save. Labels, tracking and returns are then available from the order
 view and the order grid (see the Shipping Core README).
 
@@ -45,7 +45,7 @@ view and the order grid (see the Shipping Core README).
 ## Data sent to the carrier
 
 recipient name, address (il/ilçe), phone (and e-mail for Yurtiçi/Geliver), desi and weight, COD amount, order number. Credentials are stored encrypted by Shipping Core; requests are logged with secrets masked
-(Softaware > Shipping Connect > API Log).
+(CommerceGears > Shipping Connect > API Log).
 
 ## Limitations
 

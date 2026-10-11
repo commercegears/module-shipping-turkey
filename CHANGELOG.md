@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0 (2026-10-11)
+- Improvement: renamed to CommerceGears (new Composer package, admin menu and settings paths)
+
 ## 1.0.2 (2026-10-10)
 - Improvement: label form shows the parcels' desi for Aras, Yurtiçi and Geliver; requires Shipping Core 1.1.2.
 
