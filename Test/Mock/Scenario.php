@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  *
  * Mock scenario for this carrier package: responses written from the carrier's official API documentation (and
  * recorded test-system responses in ../Fixtures), with the assertions run by the Shipping Connect test harness
