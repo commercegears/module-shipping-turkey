@@ -28,7 +28,7 @@ composer require commercegears/module-shipping-turkey
 bin/magento setup:upgrade
 ```
 
-Requires `commercegears/module-shipping-core` ^1.1.2 (installed automatically). Then add a connection in
+Requires `commercegears/module-shipping-core` ^2.0 (installed automatically). Then add a connection in
 CommerceGears > Shipping Connect > Carrier Connections > Add Carrier Connection > Aras Kargo, Yurtiçi Kargo or Geliver, enter the credentials, use
 "Test Connection", add checkout methods and save. Labels, tracking and returns are then available from the order
 view and the order grid (see the Shipping Core README).
@@ -60,4 +60,8 @@ present); it is run by the Shipping Connect test harness and not loaded by Magen
 
 ## Compatibility
 
-Magento Open Source / Adobe Commerce 2.4.7-2.4.9, PHP 8.2-8.5, Shipping Core ^1.0.
+Magento Open Source / Adobe Commerce 2.4.7-2.4.9, PHP 8.2-8.5, Shipping Core ^2.0.
+
+## Documentation
+
+[User guide](docs/user-guide.md) · [FAQ](docs/faq.md)

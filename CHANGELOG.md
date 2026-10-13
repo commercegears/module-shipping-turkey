@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 (2026-10-13)
+- Improvement: product listing, FAQ and user guide.
+- Improvement: README names the required Shipping Core version (^2.0).
+
 ## 2.0.0 (2026-10-11)
 - Improvement: renamed to CommerceGears (new Composer package, admin menu and settings paths)
 

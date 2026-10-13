@@ -1,0 +1,123 @@
+{
+    "tagline": "Aras Kargo, Yurtiçi Kargo and Geliver for Shipping Connect: Turkish checkout methods, labels with desi and cash on delivery, tracking in the customer account and cancelling, straight from your Magento admin.",
+    "key_features": [
+        "Aras Kargo, Yurtiçi Kargo and Geliver connections",
+        "Geliver reaches Aras, Yurtiçi, PTT, Sürat, HepsiJet and Kolay Gelsin",
+        "Checkout methods with flat, weight or subtotal prices",
+        "Labels with desi, weight and parcel count",
+        "Cash on delivery as cash or card (Aras, Yurtiçi)",
+        "Il and ilçe from the address, plate codes filled automatically",
+        "Tracking events in the admin and in My Account",
+        "Test mode per connection"
+    ],
+    "benefits": [
+        {
+            "icon": "clock",
+            "title": "Labels without the carrier portal",
+            "text": "Create the label and the Magento shipment with its tracking number from the order view, or for up to 50 orders at once from the order grid."
+        },
+        {
+            "icon": "chart",
+            "title": "Customers see where their parcel is",
+            "text": "A cron job reads the carrier's tracking, stores the status, events and delivery date and shows them on the customer's order page on Luma and Hyvä."
+        },
+        {
+            "icon": "globe",
+            "title": "Turkish addresses handled",
+            "text": "State/Province is sent as the province (il) and City as the district (ilçe); the province plate code is added for the carriers that need it."
+        }
+    ],
+    "showcase": [
+        {
+            "label": "Checkout",
+            "title": "Turkish carriers for Turkish addresses",
+            "text": "Each connection offers its own checkout methods with a flat price, a weight or subtotal table, free shipping from a subtotal and allowed countries, for example TR only."
+        },
+        {
+            "label": "My Account",
+            "title": "Tracking on the customer's order page",
+            "text": "The order page shows the carrier, the tracking number with a link to the carrier's tracking page, a four-step progress bar and the latest tracking events."
+        },
+        {
+            "label": "Connections",
+            "title": "One connection per carrier account",
+            "text": "Credentials are stored encrypted, the form says where they come from, and Test Connection checks them before you switch the connection on."
+        },
+        {
+            "label": "Labels",
+            "title": "Desi, weight and cash on delivery",
+            "text": "The label form shows the desi of the parcels, takes the cash on delivery amount (pre-filled for COD payment methods) and creates the Magento shipment with the tracking number."
+        },
+        {
+            "label": "Tracking",
+            "title": "Every event on the label page",
+            "text": "Status, tracking number and the carrier's events with time and location. Update Tracking checks now; Cancel cancels the shipment at the carrier."
+        }
+    ],
+    "feature_groups": [
+        {
+            "title": "Carriers",
+            "items": [
+                "Aras Kargo: order, label, cash on delivery and cancel tested on the Aras test web service; tracking beta",
+                "Yurtiçi Kargo (beta): createShipment, queryShipment, cancelShipment; the module prints the label with your cargo key as a Code 128 barcode",
+                "Geliver (beta): cheapest offer or a fixed carrier service code, PDF label from the chosen carrier, return labels",
+                "Several connections per carrier, for example one per website"
+            ]
+        },
+        {
+            "title": "Labels",
+            "items": [
+                "Desi shown for the parcels in the label form",
+                "Cash on delivery collected as cash or card (Aras, Yurtiçi)",
+                "Parcel count on one label (Yurtiçi), one parcel per label (Aras, Geliver)",
+                "Mass action for up to 50 orders, one merged PDF",
+                "Cancel at the carrier from the label page"
+            ]
+        },
+        {
+            "title": "Checkout and tracking",
+            "items": [
+                "Flat, weight table, subtotal table prices and free shipping from a subtotal",
+                "Tracking by cron with status, events and delivery date",
+                "Tracking on the customer's order page (Luma and Hyvä)",
+                "Optional order status and customer e-mails on delivery milestones"
+            ]
+        },
+        {
+            "title": "Admin and developers",
+            "items": [
+                "Test mode and live per connection",
+                "Credentials stored encrypted; disabled connections are never called",
+                "API log with passwords and tokens masked",
+                "CLI: test connection, create labels, update tracking",
+                "Separate ACL permissions"
+            ]
+        }
+    ],
+    "demo": {
+        "storefront": [
+            {
+                "label": "Checkout with a Turkish address (Luma)",
+                "url": "https://demo.commercegears.com/joust-duffle-bag.html"
+            },
+            {
+                "label": "Checkout with a Turkish address (Hyvä)",
+                "url": "https://demo.commercegears.com/hyva/joust-duffle-bag.html"
+            },
+            {
+                "label": "My Account order tracking: sign in as the demo customer (Luma)",
+                "url": "https://demo.commercegears.com/customer/account/login/"
+            },
+            {
+                "label": "My Account order tracking (Hyvä): sign in as roni_cost@example.com, password roni_cost3@example.com",
+                "url": "https://demo.commercegears.com/hyva/customer/account/login/"
+            }
+        ],
+        "admin": [
+            {
+                "label": "Admin panel (Shipping Connect: Türkiye)",
+                "url": "https://demo.commercegears.com/try-admin/shipping-turkey"
+            }
+        ]
+    }
+}
